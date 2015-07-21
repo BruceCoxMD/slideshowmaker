@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FLOOR=$1
+RANGE=$2
+
+number=0   #initialize
+while [ "$number" -le $FLOOR ]
+do
+  number=$RANDOM
+  let "number %= $RANGE"  # Scales $number down within $RANGE.
+done
+echo "$number"

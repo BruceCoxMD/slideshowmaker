@@ -1,0 +1,14 @@
+----
+
+:data-x: {{DX}}
+:data-y: {{DY}}
+:data-y: {{DZ}}
+:data-rotate-x: {{DRX}}
+:data-rotate-y: {{DRY}}
+:data-rotate-z: {{DRZ}}
+
+This is the {{image}} slide
+===============================================
+
+.. image:: {{image}}
+    :width: 1200px
