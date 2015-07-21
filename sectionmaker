@@ -1,12 +1,13 @@
 #!/bin/bash
 
 
-DX=$(bash rando 300 1000)
-DY=$(bash rando 300 1000)
-DZ=$(bash rando 1 3)
+DX=$(bash rando 700 2000)
+DY=$(bash rando 700 2000)
+# DZ=$(bash rando 1 3)
+DZ=0
 DRX=$(bash rando 1 8)
 DRY=$(bash rando 1 7)
-DRZ=$(bash rando 10 2000)
+DRZ=$(bash rando 10 200)
 IMAGE=$1
 
 cat slide |sed "s/{{DX}}/$DX/g"|sed "s/{{DY}}/$DY/g"|sed "s/{{DZ}}/$DZ/g"|sed "s/{{DRX}}/$DRX/g"|sed "s/{{DRY}}/$DRY/g"|sed "s/{{DRZ}}/$DRZ/g"|sed "s!{{image}}!$IMAGE!g"
