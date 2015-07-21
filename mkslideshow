@@ -1,4 +1,5 @@
 #!/bin/bash
 cat head
 find images -follow -iname '*.jpg' |xargs -n1 -I{} ./sectionmaker {}
+find images1 -follow -iname '*.jpg' |xargs -n1 -I{} ./sectionmaker1 {}
 cat tail

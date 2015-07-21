@@ -18,7 +18,8 @@ rm-slideshow:
 	rm -f slideshow
 
 convert:
-	find images -follow -iname '*.jpg' |xargs -n1 -I{} convert {} -resize 1920x1080\>  {}
+	find images -follow -iname '*.jpg' |xargs -n1 -I{} convert {} -strip -quality 55 -resize 1920x1080\>  {}
+	find images1 -follow -iname '*.jpg' |xargs -n1 -I{} convert {} -strip -quality 55 -resize 1920x1080\>  {}
 
 seddy:
 	sed -i 's/234876/2000" data-width="1920" data-height="1080"/g' /tmp/render/index.html
