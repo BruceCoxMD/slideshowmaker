@@ -1,0 +1,41 @@
+html {
+  background: black;
+  color: white;
+}
+.step1 {
+  display: block;
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+}
+.step {
+  display: block;
+  width: auto;
+}
+img {
+  display: block;
+  width: auto;
+}
+.future {
+  opacity: 0;
+}
+.active {
+  opacity: 1;
+}
+.step.active {
+  opacity: 1;
+}
+.present {
+  opacity: 1;
+}
+.past {
+  opacity: 1;
+}

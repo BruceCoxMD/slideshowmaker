@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FLOOR=$1
+RANGE=$2
+FLIP=$(($(($RANDOM%10))%2))
+
+number=0   #initialize
+while [ "$number" -le $FLOOR ]
+do
+  number=$RANDOM
+  let "number %= $RANGE"  # Scales $number down within $RANGE.
+done
+if [ $FLIP -eq 1 ]
+then
+  number=$(echo "$number * -1 "|bc)
+fi
+echo "$number"

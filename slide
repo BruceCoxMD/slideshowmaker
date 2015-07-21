@@ -12,5 +12,5 @@ This is the {{image}} slide
 ===============================================
 
 .. image:: {{image}}
-    :width: 1200px
+    :width: 100%
 

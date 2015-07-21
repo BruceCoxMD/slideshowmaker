@@ -3,11 +3,22 @@ all:
 
 serve: rm-slideshow slideshow hovercraft
 
+render: rm-slideshow slideshow render-hovercraft seddy
+
 slideshow:
 	bash mkslideshow > slideshow
 
+render-hovercraft:
+	hovercraft --css style.css slideshow /tmp/render
+
 hovercraft:
-	hovercraft -p 8000 slideshow
+	hovercraft --css style.css --port 8000 slideshow
 
 rm-slideshow:
-	rm slideshow
+	rm -f slideshow
+
+convert:
+	find images -follow -iname '*.jpg' |xargs -n1 -I{} convert {} -resize 1920x1080\>  {}
+
+seddy:
+	sed -i 's/234876/2000" data-width="1920" data-height="1080"/g' /tmp/render/index.html
