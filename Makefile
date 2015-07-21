@@ -3,7 +3,7 @@ all:
 
 serve: rm-slideshow slideshow hovercraft
 
-render: rm-slideshow slideshow render-hovercraft seddy
+render: rm-slideshow slideshow render-hovercraft seddy tidy
 
 slideshow:
 	bash mkslideshow > slideshow
@@ -23,3 +23,6 @@ mogrify:
 
 seddy:
 	sed -i 's/234876/2000" data-width="1920" data-height="1080"/g' ./render/index.html
+
+tidy:
+	tidy -indent -modify -upper ./render/index.html
