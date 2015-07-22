@@ -3,7 +3,7 @@ all:
 
 serve: rm-slideshow slideshow hovercraft
 
-render: rm-slideshow slideshow render-hovercraft seddy tidy
+render: rm-slideshow slideshow render-hovercraft
 
 slideshow:
 	bash mkslideshow > slideshow
@@ -25,4 +25,13 @@ seddy:
 	sed -i 's/234876/2000" data-width="1920" data-height="1080"/g' ./render/index.html
 
 tidy:
-	tidy -indent -modify -upper ./render/index.html
+	tidy -errors -quiet -indent -modify -upper -file /tmp/warnings ./render/index.html
+
+clean:
+	rm -Rf render
+
+rm: clean
+
+prep:
+	apt-get install -y python3-pip
+	pip3 install hovercraft
